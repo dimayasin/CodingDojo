@@ -1,0 +1,60 @@
+<html>
+
+<head>
+    <title>Landing Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+    <p>Your Gold:
+        <span>{{session['gold']}}</span>
+    </p>
+    <div id="deal">
+    <div class='game'>
+        <h1>Farm</h1>
+        <p>(earns 10-20 golds)</p>
+        <form action='/process_money' method="POST">
+            <input type="hidden" name='building' value="farm" />
+            <input type="submit" value="Final Gold!" />
+
+        </form>
+
+
+
+    </div>
+    <div class='game'>
+        <h1>Cave</h1>
+        <p>(earns 5-10 golds)</p>
+        <form action='/process_money' method="POST">
+            <input type="hidden" name='building' value="cave" />
+            <input type="submit" value="Final Gold!" />
+
+        </form>
+    </div>
+    <div class='game'>
+        <h1>House</h1>
+        <p>(earns 2-5 golds)</p>
+        <form action='/process_money' method="POST">
+            <input type="hidden" name='building' value="House" />
+            <input type="submit" value="Final Gold!" />
+
+        </form>
+    </div>
+    <div class='game'>
+        <h1>Casino</h1>
+        <p>(earns/takes 0-50 golds)</p>
+        <form action='/process_money' method="POST">
+            <input type="hidden" name='building' value="casino" />
+            <input type="submit" value="Final Gold!" />
+
+        </form>
+    </div></div>
+    <p>Activites: </p>
+    <textarea id="activities">{{session['msg']}} </textarea>
+    <form action="/reset" method="POST">
+        <input type = "submit" value="Reset Game" />
+    </form>
+
+</body>
+
+</html>

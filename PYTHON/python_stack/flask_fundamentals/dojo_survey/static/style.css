@@ -1,0 +1,34 @@
+#wrapper{
+    width:600px;
+    margin: 50px;
+    border: 1px solid black;
+    background-color: lightblue;
+
+}
+h1{
+    color:rgb(126, 56, 68);
+}
+label{
+    width:200px;
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+
+}
+.info{
+    width:300px;
+    box-sizing: border-box;
+    float: right;
+    position: relative;
+
+
+}
+
+#comment{
+    width:400px;
+    box-sizing: border-box;
+    float: left;
+    position: relative;
+
+    
+}

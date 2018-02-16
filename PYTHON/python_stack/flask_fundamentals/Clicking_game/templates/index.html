@@ -1,0 +1,19 @@
+<html>
+
+<head>
+    <title>Clicking Game</title>
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" /> -->
+</head>
+
+<body>
+
+    <h1>Go to school?</h1>
+    <h2>Total losses: {{counter}}</h2>
+    <form action='/level1_yes'><button>Yes</button></form>
+    <form action='/level1_no' ><button>No</button> </form>
+    <form action='/' method='POST'><input type="submit" value='Restart Game' name='restart' />
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<html>
+    <head>
+       <title>Landing Page</title>
+       <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+    </head>
+    <body>
+      <h1>Counter Page</h1>
+      <h3>this page has been visited {{counter}} times </h3>
+      <a href='/up' name='two'>Increase counter by 2...</a> <br />
+
+    <a href='/reset' name='reset' >Reset....</a>
+
+      <!-- read on to learn about form actions, we'll talk about the method in a later section -->
+      
+    </body>
+</html>

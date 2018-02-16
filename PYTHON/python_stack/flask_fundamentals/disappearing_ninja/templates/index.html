@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Dojo Survey</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+
+<body>
+    <div id='wrapper'>
+
+        <form action='/dojo_servey' method='post'>
+            <label> Your Name:</label>
+            <input class="info" type='text' name='name'>
+            <label>Dojo Location</label>
+            <select class="info" name='location'>
+                <option>Chicago</option>
+                <option>Seatel</option>
+                <option>San Jose</option>
+                <option>Washington</option>
+            </select>
+            <label>Favorite Language:</label>
+            <select class="info" name='favorite'>
+                <option>Python</option>
+                <option>JavaScript</option>
+                <option>C#</option>
+                <option>PHP</option>
+            </select>
+            <label>Comment (optional):</label>
+            <textarea name='comment'></textarea>
+
+            <input type='submit' value='Button'>
+    </div>
+    </form>
+
+
+</body>
+
+</html>
