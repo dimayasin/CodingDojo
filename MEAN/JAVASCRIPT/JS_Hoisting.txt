@@ -1,0 +1,15 @@
+1- Undefined
+2- magnet
+3- only okay
+   only okay
+4- chicken
+   half-chicken
+5- Error - mean is not a function
+6- Undefined
+   rock
+   r&b
+   disco
+7- san jose
+   seattle
+   burbank
+   san jose
