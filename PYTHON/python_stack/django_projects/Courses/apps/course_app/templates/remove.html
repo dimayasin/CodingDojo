@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Courses</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" media="screen" title="no title" charset="utf-8">
+    <!-- <link rel="script" href="{% static 'date_time.js' %}" media="screen" title="no title" charset="utf-8" /> -->
+
+</head>
+
+<body>
+    <!-- <h3> <a href="/out">Logout</a></h3> -->
+
+    <h1>Are you sure you want to delete the following course?</h2>
+        <h2>Courses: </h2>
+        <table>
+
+            <tr>
+                <td>Name:</td>
+                <td>{{course.name}}</td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td>{{course.description}}</td>
+
+            </tr>
+
+        </table>
+        <a href="/show" id="no"> No </a>
+        <a href="/delete" id="yes"> Yes! I want to delete this </a>
+        </form>
+</body>
+
+</html>

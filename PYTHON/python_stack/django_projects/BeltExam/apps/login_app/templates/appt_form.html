@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <title>Login & Registration Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" media="screen" title="no title" charset="utf-8">
+
+</head>
+
+<body>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+    </ul>
+    {% endif %}
+    <h3><a href="/show">Dashboard</a> | <a href="/out">Logout</a></h3>
+    <h1>Welcome {{users.name}}</h1>
+    <form action="/update" method="POST">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Task:</td>
+                <td>
+                    <input type="text" name="task" value="{{posts.task}}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td>
+                    <select name="status" value="{{posts.status}}">
+                        <option>Done</option>
+                        <option>Missed</option>
+                        <option>Pending</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Date:</td>
+                <td>
+                    <input type="date" name="date" value="{{posts.date}}" />
+                </td>
+            </tr>
+            <tr>
+                <td>Time:</td>
+                <td>
+                    <input type="time" name="time" value="{{posts.time}}"  />
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" value="Update" />
+                </td>
+            </tr>
+
+        </table>
+
+    </form>
+</body>
+
+</html>

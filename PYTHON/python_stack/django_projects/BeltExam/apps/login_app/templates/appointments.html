@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>Appointments</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}" media="screen" title="no title" charset="utf-8">
+        <link rel="script" href="{% static 'date_time.js' %}" media="screen" title="no title" charset="utf-8" />
+    
+    </head>
+    <body>
+            <h3> <a href="/out">Logout</a></h3>
+
+        <h1>Hello {{request.session.name}}!</h1>
+        <h2>Here are your appointments for today: <span id="datetime"></span> </h2>
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            {% for my_post in today_posts %}
+            <tr>
+                <td>{{my_post.task}}</td>
+                <td>{{my_post.time}}</td>
+                <td>{{my_post.status}}</td>
+                <td>
+                    {% if my_post.status ==  "Done" %}
+
+                    <a href="{{my_post.id}}/delete">Delete</a>  
+                    {% else %}
+                    <a href="{{my_post.id}}/edit" >Edit</a>
+                    <a href="{{my_post.id}}/delete">Delete</a>  
+                    {% endif %}
+                
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <h2>Your Other appointments: </h2>
+        <table>
+            <tr>
+                <th>Task</th>
+                <th>Time</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            {% for my_post in future_posts %}
+            <tr>
+                <td>{{my_post.task}}</td>
+                <td>{{my_post.time}}</td>
+                <td>{{my_post.status}}</td>
+                <td>
+                    {% if my_post.status ==  "Done" %}
+
+                    <a href="{{my_post.id}}/delete">Delete</a>  
+                    {% else %}
+                    <a href="{{my_post.id}}/edit" >Edit</a>
+                    <a href="{{my_post.id}}/delete">Delete</a>  
+                    {% endif %}
+                
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+
+
+
+
+        <h2><a href="/add">Add New Appointment</a></h2>
+ 
+
+    </body>
+</html>

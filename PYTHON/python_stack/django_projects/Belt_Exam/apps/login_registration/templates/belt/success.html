@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    <title>Login & Registration Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" media="screen" title="no title" charset="utf-8">
+
+</head>
+
+<body>
+    <div id="heading"><a id="left" href="/">Go Home</a><a href="/out" id="right">Log Out</a> </div>
+    <div id="container">
+        <h1>SUCCESS!!</h1>
+        <h1>Welcome {{request.session.first_name}}</h1>
+        
+
+    </div>
+</body>
+
+</html>

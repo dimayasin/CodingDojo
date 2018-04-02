@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Time Display</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'survey/style.css' %}" media="screen" title="no title" charset="utf-8">
+
+</head>
+
+<body>
+    <div id="container1">
+        <h1>Thank you for submitting this form! You have submitted this form {{counter}} times now</h1>
+    </div>
+    <div id="container2">
+        <table>
+            <tr>
+                <td>Your Name:</td>
+                <td>{{name}}</td>
+            </tr>
+            <tr>
+                <td>
+                    Dojo Location:</td>
+                <td>
+                    {{location}}</td>
+            </tr>
+            <tr>
+                <td>
+                    Favorite Language:</td>
+                <td>
+                    {{language}}</td>
+            </tr>
+            <tr>
+                <td>
+                    Comments (Optional):</td>
+                <td>
+                    {{comment}}</td>
+            </tr>
+        </table>
+
+
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+h3{
+    text-align: right;
+}
+table {
+    width: 400px;
+    border: 1px solid black;
+}
+th{
+    background: lightblue;
+}

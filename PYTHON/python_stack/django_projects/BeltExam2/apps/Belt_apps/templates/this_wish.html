@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>Courses</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" media="screen" title="no title" charset="utf-8">
+
+</head>
+
+<body>
+    <h3>
+        <a href="/out">Logout</a>
+ |
+        <a href="/show">Home</a>
+    </h3>
+
+    <h1>{{wishes.item}}</h1>
+    <h2> Users who added this product/item under their wish list: </h2>
+    {% for name in names %}
+    <h2>{{name}}</h2>
+    {% endfor %}
+
+</body>
+
+</html>

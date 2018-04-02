@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title>Courses</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'style.css' %}" media="screen" title="no title" charset="utf-8">
+        <!-- <link rel="script" href="{% static 'date_time.js' %}" media="screen" title="no title" charset="utf-8" /> -->
+    
+    </head>
+    <body>
+            <h3> <a href="/out">Logout</a></h3>
+
+            <h2>Add a New Course</h2>
+            <form action="/new_course" method="POST">
+                {% csrf_token %}
+                <table>
+                    <tr>
+                            <td>Name:</td>
+                            <td>
+                                <input type="text" name="name" />
+                            </td>
+                        </tr>
+                        <tr>
+                                <td>Description:</td>
+                                <td>
+                                    <textarea name="description"></textarea> 
+                                </td>
+                            </tr>
+                
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Add" />
+                        </td>
+                    </tr>
+        
+                </table>
+        
+            </form>
+        
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+
+
+
+            <!-- <h1>Hello {{request.session.name}}!</h1> -->
+        <h2>Courses: </h2>
+        <table class="display">
+            <tr>
+                <th class="cellH">Course Name</th>
+                <th class="cellH">Description</th>
+                <th class="cellH">Date Added</th>
+                <th class="cellH">Action</th>
+            </tr>
+            {% for course in courses %}
+            <tr>
+                <td class="cellD">{{course.name}}</td>
+                <td class="cellD">{{course.description}}</td>
+                <td class="cellD">{{course.date}}</td>
+                <td class="cellD">
+                     <a href="{{course.id}}/remove">Remove</a> 
+                     | <a href="{{course.id}}/favorites">Add to Favorites</a> 
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+ 
+        <!-- <h2><a href="/add">Add New Appointment</a></h2> -->
+        <h2>Favorite Courses: </h2>
+        <table class="display">
+            <tr>
+                <th class="cellH">Course Name</th>
+                <th class="cellH">Description</th>
+                <th class="cellH">Date Added</th>
+
+            </tr>
+            {% for favorite in favorites %}
+            <tr>
+                <td class="cellD">{{favorite.name}}</td>
+                <td class="cellD">{{favorite.description}}</td>
+                <td class="cellD">{{favorite.date}}</td>
+ 
+            </tr>
+            {% endfor %}
+        </table>
+
+
+    </body>
+</html>

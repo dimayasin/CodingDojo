@@ -1,0 +1,20 @@
+h3{
+    text-align: right;
+}
+.display {
+    width: 900px;
+    border: 1px solid black;
+}
+.cellH{
+    width: 200px;
+    background: lightblue;
+}
+.cellD{
+    width: 200px;
+    background: lightgray;
+}
+.space{
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

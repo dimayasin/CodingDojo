@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>Ninja Gold</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'ninja/style.css' %}" media="screen" title="no title"  charset="utf-8">
+</head>
+
+<body>
+    <p>Your Gold:
+        <span>{{request.session.gold}}</span>
+    </p>
+    <div id="deal">
+    <div class='game'>
+        <h1>Farm</h1>
+        <p>(earns 10-20 golds)</p>
+        <form action='/process_money' method="POST">
+            {% csrf_token %}
+            <input type="hidden" name='building' value="farm" />
+            <input type="submit" value="Final Gold!" />
+
+        </form>
+
+
+
+    </div>
+    <div class='game'>
+        <h1>Cave</h1>
+        <p>(earns 5-10 golds)</p>
+        <form action='/process_money' method="POST">
+            {% csrf_token %}
+            <input type="hidden" name='building' value="cave" />
+            <input type="submit" value="Final Gold!" />
+
+        </form>
+    </div>
+    <div class='game'>
+        <h1>House</h1>
+        <p>(earns 2-5 golds)</p>
+        <form action='/process_money' method="POST">
+            {% csrf_token %}
+            <input type="hidden" name='building' value="house" />
+            <input type="submit" value="Final Gold!" />
+
+        </form>
+    </div>
+    <div class='game'>
+        <h1>Casino</h1>
+        <p>(earns/takes 0-50 golds)</p>
+        <form action='/process_money' method="POST">
+            {% csrf_token %}
+            <input type="hidden" name='building' value="casino" />
+            <input type="submit" value="Final Gold!" />
+
+        </form>
+    </div></div>
+    <p>Activites: </p>
+    <textarea id="activities">{{request.session.msg}} </textarea>
+    <form action="/reset" method="POST">
+        {% csrf_token %}
+        <input type = "submit" value="Reset Game" />
+    </form>
+
+</body>
+
+</html>

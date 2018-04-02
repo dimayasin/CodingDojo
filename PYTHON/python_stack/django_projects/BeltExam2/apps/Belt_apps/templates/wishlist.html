@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <title>Courses</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}" media="screen" title="no title" charset="utf-8">
+
+</head>
+
+<body>
+    <h3>
+        <a href="/out">Logout</a>
+    </h3>
+
+
+
+    <h1>Hello {{request.session.name}}!</h1>
+    <hr />
+    <h2 class="space">Your Wish List: </h2>
+    <table class="display">
+        <tr>
+            <th class="cellH">Item Name</th>
+            <th class="cellH">Added By</th>
+            <th class="cellH">Date Added</th>
+            <th class="cellH">Action</th>
+        </tr>
+
+        {% for mywish in this_wishlist %}
+        <tr>
+            <td class="cellD"><a href="{{mywish.id}}/showlist">{{mywish.item}}</a></td>
+            <td class="cellD">{{mywish.added_by.name}}</td>
+            <td class="cellD">{{mywish.date}}</td>
+            <td class="cellD">
+                {% if mywish.added_by.name == request.session.name %}
+                <a href="{{mywish.id}}/remove">Delete</a>
+                {% else %}
+                <a href="{{mywish.id}}/notfave">Remove from my Wishlist </a>
+
+                {% endif %}
+            </td>
+
+        </tr>
+        {% endfor %} {% for mywish in favelists %}
+        <tr>
+            <td class="cellD"><a href="{{mywish.id}}/showlist">{{mywish.item}}</a></td>
+            <td class="cellD">{{mywish.added_by.name}}</td>
+            <td class="cellD">{{mywish.date}}</td>
+            <td class="cellD">
+                {% if mywish.added_by.name == request.session.name %}
+                <a href="{{mywish.id}}/remove">Delete</a>
+                {% else %}
+                <a href="{{mywish.id}}/notfave">Remove from my Wishlist </a>
+
+                {% endif %}
+            </td>
+
+        </tr>
+        {% endfor %}
+
+
+    </table>
+
+
+    <h2 class="space">Other Users' Wish List: </h2>
+    <table class="display">
+        <tr>
+            <th class="cellH">Item Name</th>
+            <th class="cellH">Added By</th>
+            <th class="cellH">Date Added</th>
+            <th class="cellH">Action</th>
+
+        </tr>
+        {% for i in nofaves %}
+        <tr>
+            <td class="cellD">{{i.item}}</td>
+            <td class="cellD">{{i.added_by.name}}</td>
+            <td class="cellD">{{i.date}}</td>
+            <td class="cellD">
+                <a href="{{i.id}}/favorites">Add to my Wishlist</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <h3>
+        <a href="/new">Add Item</a>
+    </h3>
+
+
+</body>
+
+</html>

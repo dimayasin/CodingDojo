@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Time Display</title>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'survey/style.css' %}" media="screen" title="no title"  charset="utf-8">
+
+    </head>
+    <body>
+        <div id="container1">
+            <table>
+            <form action="/process" method="post">
+                {% csrf_token %}
+               <tr> <td><label>Your Name:</label></td>
+                <td><input type="text" name="name" /></td></tr>
+                <tr><td>
+                <label>Dojo Location: </label></td><td>
+                <select name="location">
+                    <option>Mountain View</option>
+                    <option>Chicago</option>
+                    <option>Seatle</option>
+                    <option>Washington DC</option>
+
+                </select></td></tr>
+                <tr><td>
+                <label>Favorite Language: </label></td><td>
+                <select name="language">
+                    <option>JavaScript</option>
+                    <option>Python</option>
+                    <option>HTML/CSS</option>
+                    <option>C#</option>
+
+                </select></td></tr><tr><td>
+                <label>Comments (Optional):</label></td><td>
+                <textarea name="comment" id="comment"></textarea></td></tr>
+                <tr><td></td><td>
+                <input type="submit" value="Submit" /></td></tr>
+            </table>
+            
+            
+            
+            
+            
+            </form>
+          
+    
+
+        </div>
+    
+    </body>
+</html>
