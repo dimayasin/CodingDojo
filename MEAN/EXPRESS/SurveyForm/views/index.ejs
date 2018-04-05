@@ -1,13 +1,13 @@
 <h1>Dojo Survey</h1>
 
-<form action="/result" method="Post">
+<form action="/results" method="post">
     <table>
         <tr>
             <td>
                 <label>Your Name:</label>
             </td>
             <td>
-                <input type="text" value="name" />
+                <input type="text" name="name" width="50" />
             </td>
         </tr>
         <tr>
@@ -15,11 +15,12 @@
                 <label>Dojo Location: </label>
             </td>
             <td>
-                <select name="location">
+                <select name="location" width="50">
                     <option>Mountain View</option>
                     <option>Chicago</option>
                     <option>Seatle</option>
                     <option>Washington DC</option>
+
                 </select>
             </td>
         </tr>
@@ -28,7 +29,7 @@
                 <label>Favorite Language: </label>
             </td>
             <td>
-                <select name="language">
+                <select name="language" width="50" >
                     <option>JavaScript</option>
                     <option>Python</option>
                     <option>HTML/CSS</option>
@@ -46,8 +47,11 @@
         </tr>
         <tr>
             <td>
-                <textarea name="comment" id="comment"></textarea>
+                <textarea name="comment" id="comment" cols="40"></textarea>
             </td>
+        </tr>
+        <tr>
+            <td></td>
         </tr>
         <tr>
             <td>
@@ -55,4 +59,9 @@
             </td>
         </tr>
     </table>
+
+
+
+
+
 </form>

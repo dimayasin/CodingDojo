@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 });
 // Ninja Level 1
 
-app.get('/plus2', function (req, res) {
+app.get('/result', function (req, res) {
   var counter = 0;
   if (req.session.counter != null) {
     req.session.counter += 3;
@@ -44,9 +44,7 @@ app.get('/plus2', function (req, res) {
 });
 
 // Ninja Level 2
-app.get('/reset', function (req, res) {
-  var counter = -1;
-  req.session.counter = -1;
+app.get('/back', function (req, res) {
 
   res.redirect('/');
 });
