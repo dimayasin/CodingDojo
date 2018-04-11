@@ -1,0 +1,14 @@
+<h1>FORM</h1>
+<FORM action="/users">
+    Name: <input type="text" name="name" />
+    Age:<input type="number" name="age" />
+    <input type="submit" value="Submit" />
+</FORM>
+
+<h1>Users: </h1>
+<% for (var u of users) { %>
+    <% -------------------------- %>
+    <%=u.name%>
+    <%=u.age%>
+    <% -------------------------- %>
+    <% <br /> }%>
